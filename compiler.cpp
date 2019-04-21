@@ -5,6 +5,7 @@
 #include <string>
 #include <sstream>
 #include <cstring>
+#include <iterator>
 
 uint8_t const DEFAULT_VALUE_1 = 0xFF;
 uint8_t const DEFAULT_VALUE_2 = 0x04;
