@@ -52,7 +52,7 @@ void printHelpMessage() {
                  "one or none of them;\n"
                  "exit - close program;\n"
                  "help | -help | --help - print this message"
-                 << std::endl;
+              << std::endl;
 }
 
 void* allocateMemory(size_t len) {
@@ -85,7 +85,7 @@ bool changePermissionsAndCheck(void* addr, size_t len, int prot) {
 std::vector<std::string> splitString(std::string const& str) {
     std::istringstream stream(str);
     std::vector<std::string> result{std::istream_iterator<std::string>(stream),
-            std::istream_iterator<std::string>()};
+                                    std::istream_iterator<std::string>()};
     return result;
 }
 
@@ -161,8 +161,8 @@ int main() {
             }
 
             auto func = (jitFunc)ptr;
-
-            std::cout << "result: " << func() << std::endl;
+            int res = func();
+            std::cout << "result: " << res << std::endl;
 
             if (!changePermissionsAndCheck(ptr, code.size(), PROT_READ | PROT_WRITE)) {
                 return EXIT_FAILURE;
