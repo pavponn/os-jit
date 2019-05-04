@@ -1,21 +1,26 @@
-#  Кусочек JIT компилятора
+# Jit-compiler
+This is an educational project, aim is to to understand how JIT compilers work.
 
-Цель - получить знакомство с системными вызывами, используемыми для получения/освобождения
-памяти от ядра. Получить представление о том, как может работать JIT компилятор.
+Function, provided here, is simple: it multiplies two numbers (255 and 4 by default).
 
-## Программа должна
- * Выделить память с помощью mmap(2).
- * Записать в выделенную память машинный код, соответсвующий какой-либо функции.
- * Изменить права на выделенную память - чтение и исполнение. See: mprotect(2).
- * Вызвать функцию по указателю на выделенную память.
- * Освободить выделенную память.
+## Supported commands
+* `execute <arg1> <arg2>` - executes function with specified arguments, it's possible to specify both, one or none of them;
+* `exit` - close program;
+* `help` | `-help` | `--help` - print help message.
 
-## Что может помочь?
- * man objdump
- * help disassemble в gdb
+## Build
+```
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+```
+Requires C++14 compiler.
 
-## Extra points
-Сильные духом призываются к возможности модификации кода выполняемой функции
-в runtime. Например, вы можете получить аргументом вызова вашей программы
-какое-то число и пропатчить машинный код этим числом. Эта часть задания будет
-оцениваться в дополнительные баллы.
+## Test
+Tested manually on macOS Mojave 10.14.3 and Linux 4.12.
+
+## Copyright
+Pavel Ponomarev, 2019 (pavponn@gmail.com)
+
+MIT License.
