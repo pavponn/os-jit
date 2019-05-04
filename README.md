@@ -1,4 +1,4 @@
-# Jit-compiler
+# JIT compiler
 This is an educational project, aim is to to understand how JIT compilers work.
 
 Function, provided here, is simple: it multiplies two numbers (255 and 4 by default). 
